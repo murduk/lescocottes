@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Les Cocottes DC — ateliers et camps à la journée en français, dans la région DC, Maryland & Virginie. Une immersion joyeuse dans la langue et la culture françaises.">
+  <title>Les Cocottes DC — Ateliers & Camps en français</title>
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#ed6993; --hotpink:#e72b89; --teal:#64c1be; --deepteal:#026358;
+      --yellow:#f7d37f; --lavender:#bbb6db; --cream:#fffaf3; --ink:#2f2766;
+      --orange:#f5a240; --white:#fff;
+      --shadow:0 16px 45px rgba(47,39,102,.12);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--cream);font-family:"DM Sans",system-ui,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,92%);margin:auto}
+    .gingham{
+      background-color:#fff8f3;
+      background-image:
+        linear-gradient(90deg,rgba(237,105,147,.13) 50%,transparent 50%),
+        linear-gradient(rgba(237,105,147,.13) 50%,transparent 50%);
+      background-size:34px 34px;
+      background-position:0 0,0 0;
+    }
+    header{
+      position:sticky;top:0;z-index:20;background:rgba(255,250,243,.92);
+      backdrop-filter:blur(12px);border-bottom:1px solid rgba(47,39,102,.08)
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px}
+    .brand img{width:145px;height:auto}
+    .navlinks{display:flex;align-items:center;gap:22px;font-size:.92rem;font-weight:700}
+    .navlinks a{padding:9px 4px;transition:.2s}
+    .navlinks a:hover{color:var(--hotpink)}
+    .navcta,.btn{
+      display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;
+      padding:13px 20px;border-radius:999px;background:var(--hotpink);color:white;font-weight:700;
+      box-shadow:0 8px 20px rgba(231,43,137,.22);transition:.2s
+    }
+    .btn:hover,.navcta:hover{transform:translateY(-2px);filter:saturate(1.05)}
+    .btn.secondary{background:var(--teal);box-shadow:0 8px 20px rgba(100,193,190,.25)}
+    .menu{display:none;background:none;border:0;font-size:28px;color:var(--ink)}
+    .hero{position:relative;overflow:hidden;padding:76px 0 72px}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;opacity:.35;pointer-events:none}
+    .hero:before{width:300px;height:300px;background:var(--yellow);right:-100px;top:-80px}
+    .hero:after{width:230px;height:230px;background:var(--lavender);left:-100px;bottom:-80px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border-radius:999px;background:#fff;color:var(--deepteal);font-size:.82rem;font-weight:800;letter-spacing:.03em}
+    h1,h2,h3{font-family:"Baloo 2",cursive;line-height:1.05;margin:0}
+    h1{font-size:clamp(3.4rem,7vw,6.2rem);color:var(--hotpink);margin:17px 0 12px;letter-spacing:-.04em}
+    .hero p{font-size:1.18rem;max-width:610px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .hero-art{position:relative;display:flex;justify-content:center}
+    .hero-card{background:#fff;border-radius:40px;padding:28px;box-shadow:var(--shadow);transform:rotate(2deg)}
+    .hero-card img{width:min(470px,100%);height:auto}
+    .sticker{position:absolute;display:grid;place-items:center;width:112px;height:112px;border-radius:50%;background:var(--yellow);color:var(--ink);font-family:"Baloo 2";font-weight:700;text-align:center;line-height:1.05;box-shadow:0 12px 25px rgba(47,39,102,.12);transform:rotate(-8deg);bottom:-15px;left:0}
+    section{padding:88px 0}
+    .intro{background:var(--cream);padding:70px 0 82px}
+    .intro-box{background:#fff;border-radius:32px;padding:42px 48px;box-shadow:var(--shadow);border:1px solid rgba(47,39,102,.05);max-width:980px;margin:auto}
+    .intro-box h2{font-size:clamp(2.2rem,4vw,3.4rem);color:var(--deepteal);margin:0 0 14px}
+    .intro-box h2:not(:first-child){color:var(--hotpink);margin-top:34px;white-space:nowrap;font-size:clamp(1.75rem,3.4vw,3.4rem)}
+    .intro-box p{margin:0 0 18px;font-size:1.05rem}
+    .intro-box p:last-child{margin-bottom:0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+    .section-head h2{font-size:clamp(2.5rem,5vw,4rem);color:var(--deepteal)}
+    .section-head p{margin:12px auto 0;font-size:1.05rem}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(47,39,102,.05)}
+    .icon{width:62px;height:62px;border-radius:19px;display:grid;place-items:center;font-size:31px;margin-bottom:18px}
+    .pink{background:#fde1ea}.teal{background:#dff4f2}.yellow{background:#fff0c9}.lav{background:#ebe8f5}
+    .card h3{font-size:1.65rem;margin-bottom:8px}
+    .pill{display:inline-block;margin-top:12px;padding:7px 11px;border-radius:999px;background:#f5f0f4;font-size:.78rem;font-weight:700}
+    .story{background:#fff;position:relative}
+    .story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+    .story-note{padding:40px;border-radius:38px;background:var(--teal);color:#073e39;position:relative;overflow:hidden}
+    .story-note:after{content:"Les Cocottes";position:absolute;right:-20px;bottom:-30px;font-family:"Baloo 2";font-size:5rem;opacity:.11;transform:rotate(-10deg)}
+    .story-note h2{font-size:3.5rem;color:#fff}
+    .story-copy h3{font-size:2rem;color:var(--hotpink);margin-bottom:8px}
+    .story-copy p{margin:0 0 17px}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:25px}
+    .value{padding:20px;background:var(--cream);border-radius:20px}
+    .value strong{display:block;color:var(--deepteal)}
+    .band{padding:28px 0;background:var(--hotpink);color:#fff}
+    .band-inner{display:flex;justify-content:space-between;gap:25px;align-items:center}
+    .band h2{font-size:2.4rem}
+    .band .btn{background:#fff;color:var(--hotpink);box-shadow:none}
+    .gallery-wrap{position:relative}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .photo{
+      min-height:245px;border-radius:24px;overflow:hidden;position:relative;background:var(--teal);
+      display:flex;align-items:flex-end;padding:18px;box-shadow:var(--shadow)
+    }
+    .photo:nth-child(2){background:var(--yellow)} .photo:nth-child(3){background:var(--pink)}
+    .photo:nth-child(4){background:var(--lavender)} .photo:nth-child(5){background:#f8c6d7} .photo:nth-child(6){background:#bfe7e4}
+    .photo .placeholder{position:absolute;inset:0;display:grid;place-items:center;font-size:48px;opacity:.65}
+    .caption{position:relative;z-index:1;background:rgba(255,255,255,.88);border-radius:16px;padding:11px 14px;width:100%;font-weight:800}
+    .caption small{display:block;font-weight:500;color:#5f5877}
+    .gallery-note{text-align:center;margin-top:22px;font-size:.9rem;color:#6b6480}
+    .how{background:#f4efe7}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+    .step{background:#fff;border-radius:25px;padding:27px;position:relative}
+    .step:before{counter-increment:step;content:counter(step);width:42px;height:42px;display:grid;place-items:center;background:var(--yellow);border-radius:50%;font-family:"Baloo 2";font-size:1.4rem;font-weight:700;margin-bottom:14px}
+    .step h3{font-size:1.55rem;margin-bottom:7px}
+    .faq{max-width:850px;margin:auto}
+    details{background:#fff;border-radius:18px;margin:10px 0;padding:18px 22px;box-shadow:0 5px 20px rgba(47,39,102,.06)}
+    summary{cursor:pointer;font-weight:800;color:var(--deepteal)}
+    .contact{background:var(--deepteal);color:white;position:relative;overflow:hidden}
+    .contact:before{content:"";position:absolute;width:430px;height:430px;border:70px solid rgba(255,255,255,.06);border-radius:50%;right:-170px;top:-190px}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:start;position:relative}
+    .contact h2{font-size:3.7rem;color:var(--yellow)}
+    .contact p{color:#e5f6f4}
+    .contact-info{display:grid;gap:12px;margin-top:25px}
+    .contact-info a{display:flex;align-items:center;gap:12px;font-weight:700}
+    .contact-info span{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center}
+    form{background:#fff;color:var(--ink);padding:28px;border-radius:28px;box-shadow:var(--shadow)}
+    label{display:block;font-size:.84rem;font-weight:800;margin:0 0 6px}
+    input,textarea,select{width:100%;border:1px solid #ddd8e4;border-radius:13px;padding:13px 14px;font:inherit;color:var(--ink);background:#fff;margin-bottom:15px}
+    textarea{min-height:120px;resize:vertical}
+    form .btn{width:100%}
+    footer{padding:27px 0;background:#fff;color:#6a6378;font-size:.85rem}
+    footer .foot{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .mini-logo{width:90px}
+    @media(max-width:900px){
+      .navlinks{display:none}.menu{display:block}
+      .hero-grid,.story-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{padding-top:48px}.hero-art{order:-1}.hero-card{max-width:500px}
+      .cards,.steps{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:600px){
+      section{padding:65px 0}.brand img{width:118px}.navcta{display:none}
+      .cards,.steps,.gallery,.values{grid-template-columns:1fr}
+      .hero p{font-size:1.05rem}.sticker{width:85px;height:85px;font-size:.85rem}
+      .band-inner,footer .foot{flex-direction:column;align-items:flex-start}
+      .contact h2{font-size:3rem}.intro-box{padding:30px 24px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#accueil" aria-label="Les Cocottes"><img src="logo.png" alt="Les Cocottes DC"></a>
+      <div class="navlinks">
+        <a href="#activites">Activités</a><a href="#histoire">Notre histoire</a><a href="#galerie">Galerie</a>
+      </div>
+      <a class="navcta" href="#contact">Nous contacter</a>
+      <button class="menu" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="accueil" class="hero gingham">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">🇫🇷 DC • Maryland • Virginie</span>
+        <h1>Grandir en français,<br>les mains dans l’aventure.</h1>
+        <p><strong>Les Cocottes</strong> proposent des camps à la journée et des ateliers thématiques pour les enfants, en immersion dans la langue <em>et</em> la culture françaises — avec beaucoup de créativité, de nature, de cuisine, d’art et de bonne humeur.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Découvrir les ateliers</a>
+          <a class="btn secondary" href="#histoire">Notre histoire →</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-card"><img src="logo.png" alt="Illustration des Cocottes"></div>
+        <div class="sticker">100%<br>français<br>♡</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <div class="intro-box">
+        <h2>Les Cocottes, c’est quoi ?</h2>
+        <p>Pensé comme un café associatif, c’est un lieu chaleureux, bienveillant et interculturel où tout le monde est le bienvenu, d’où que l’on vienne ! Des ateliers ludiques pour les tout-petits, des temps de partage pour les adultes et des moments complices à vivre en famille.</p>
+        <h2>Faut-il parler français couramment ?</h2>
+        <p>Pas du tout ! Les Cocottes le parlent déjà pour vous. Venez simplement comme vous êtes : ici, la convivialité se comprend dans toutes les langues.</p>
+        <p><strong>Les Cocottes</strong> proposent des camps à la journée et des ateliers thématiques pour les enfants, en immersion dans la langue <em>et</em> la culture françaises.</p>
+        <p>Nous offrons aux enfants un espace d’échange et de partage, bienveillant, ludique et créatif, où chacun peut prendre confiance, oser s’exprimer et faire vivre le français avec plaisir, le tout dans la bonne humeur.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="activites">
+    <div class="container">
+      <div class="section-head">
+        <h2>Des journées qui ont du goût</h2>
+        <p>Chaque rendez-vous est imaginé comme une petite aventure : on apprend, on crée, on bouge, on goûte et, surtout, on parle français naturellement.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon pink">🎨</div><h3>Art & créativité</h3>
+          <p>Peinture, collage, modelage, artistes français et créations inspirées de nos régions et de notre patrimoine.</p>
+          <span class="pill">Imaginer • Créer • S’exprimer</span>
+        </article>
+        <article class="card">
+          <div class="icon teal">🌿</div><h3>Nature & découvertes</h3>
+          <p>Activités et jeux en extérieur</p>
+          <span class="pill">Explorer • Observer • Comprendre</span>
+        </article>
+        <article class="card">
+          <div class="icon yellow">🥐</div><h3>Culture & gourmandise</h3>
+          <p>Recettes, fêtes, chansons, contes, jeux et traditions : la culture française se raconte autant qu’elle se vit.</p>
+          <span class="pill">Goûter • Chanter • Partager</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="histoire" class="story">
+    <div class="container story-grid">
+      <div class="story-note">
+        <h2>Deux mamans.<br>Une envie.<br>Des Cocottes.</h2>
+        <p>Une escale en Europe sans bouger de DC</p>
+      </div>
+      <div class="story-copy">
+        <h3>Une histoire née de la vie de famille</h3>
+        <p><strong>Carine et Clémence sont deux mamans françaises vivant dans le Maryland.</strong> Au fil de leurs parcours de mamans, notamment au sein de l’école coopérative où elles se sont rencontrées et d’une école d’immersion française, elles ont partagé une même envie : transmettre à leurs enfants non seulement leur langue, mais aussi la culture française qui fait partie de leurs identités.</p>
+        <p>Créatrice d’espaces, Carine animait déjà des ateliers autour de <strong>l’art et de la nature en France</strong>. Clémence, ostéopathe DO, accompagnait de nombreux enfants et s’intéressait de près à leur développement et à leur bien-être.</p>
+        <p>De cette rencontre entre <strong>créativité, pédagogie, culture et enfance</strong> est née une idée simple : <strong>faire vivre le français plutôt que simplement l’enseigner.</strong></p>
+        <p>Les Cocottes proposent ainsi des ateliers immersifs où les enfants découvrent chaque thème à travers des activités concrètes, des contes, des jeux, des chansons et des expériences inspirées de la France. Dans un cadre <strong>bienveillant, ludique, créatif et joyeux</strong>, ils prennent confiance, osent s’exprimer et développent le plaisir de vivre le français au quotidien.</p>
+
+        <div class="values">
+          <div class="value"><strong>🗣️ Le français vivant</strong><span>Une langue utilisée pour jouer, raconter et échanger.</span></div>
+          <div class="value"><strong>🧡 Le plaisir d’abord</strong><span>Oser faire et expérimenter ensemble. Un cadre adapté aux enfants, du plaisir pour tous.</span></div>
+          <div class="value"><strong>🇫🇷 La culture en action</strong><span>Traditions, arts… gourmandises !</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="container band-inner">
+      <div><h2>Une journée chez les Cocottes ?</h2><div>Un thème • des copains • du français • plein de découvertes.</div></div>
+      <a class="btn" href="#contact">Recevoir les prochaines dates</a>
+    </div>
+  </div>
+
+  <section id="galerie" class="gingham">
+    <div class="container">
+      <div class="section-head">
+        <h2>Les Cocottes en images</h2>
+        <p>Quelques-unes de nos aventures passées.</p>
+      </div>
+      <div class="gallery">
+        <article class="photo"><div class="placeholder">🎨</div><div class="caption">Atelier artistique</div></article>
+        <article class="photo"><div class="placeholder">🌳</div><div class="caption">Jeux collectifs en extérieur</div></article>
+        <article class="photo"><div class="placeholder">👩‍🍳</div><div class="caption">Gourmandise et dégustation</div></article>
+        <article class="photo"><div class="placeholder">🎭</div><div class="caption">Histoires et balades contées</div></article>
+        <article class="photo"><div class="placeholder">🎶</div><div class="caption">Chansons et Comptines</div></article>
+        <article class="photo"><div class="placeholder">🧺</div><div class="caption">Une journée à la française</div></article>
+      </div>
+      <div class="gallery-note"></div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="container">
+      <div class="section-head"><h2>Comment ça marche ?</h2><p>Une organisation simple pour les familles de la région.</p></div>
+      <div class="steps">
+        <div class="step"><h3>Choisir son aventure</h3><p>Découvrez nos camps à la journée et nos ateliers à thème selon les âges et les saisons.</p></div>
+        <div class="step"><h3>Réserver sa place</h3><p>Inscrivez votre enfant et partagez-nous les informations utiles pour préparer son accueil.</p></div>
+        <div class="step"><h3>Rejoignez la communauté</h3><p>Après la journée de camp, les familles sont invitées à venir découvrir les activités de la journée.</p></div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow">On papote ?</span>
+        <h2>Venez faire partie de l’aventure.</h2>
+        <p>En classe ou en famille, nous concoctons des ateliers 100 % sur mesure. Contactez-nous pour démarrer l’aventure.</p>
+        <div class="contact-info">
+          <a href="mailto:bonjour@lescocottesdc.com"><span>✉️</span> bonjour@lescocottesdc.com</a>
+          <a href="tel:+10000000000"><span>📞</span> +1 (000) 000-0000</a>
+          <div><span>📍</span> Washington DC • Maryland • Virginia</div>
+        </div>
+      </div>
+      <form onsubmit="sendMail(event)">
+        <label for="name">Votre prénom / nom</label>
+        <input id="name" name="name" required placeholder="Camille Dupont">
+        <label for="email">Votre email</label>
+        <input id="email" name="email" type="email" required placeholder="camille@email.com">
+        <label for="topic">Je souhaite...</label>
+        <select id="topic" name="topic"><option>Recevoir les prochaines dates</option><option>En savoir plus sur les ateliers</option><option>Organiser un atelier privé</option><option>Autre question</option></select>
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" placeholder="Bonjour les Cocottes…"></textarea>
+        <button class="btn" type="submit">Envoyer mon message 🐔</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <img class="mini-logo" src="logo.png" alt="Les Cocottes">
+    <div>© 2026 Les Cocottes DC • Ateliers & camps en français</div>
+    <div>Langue • Culture • Créativité • Enfance</div>
+  </div>
+</footer>
+
+<script>
+function sendMail(e){
+  e.preventDefault();
+  const email="bonjour@lescocottesdc.com"; // À REMPLACER par votre vraie adresse
+  const name=document.getElementById("name").value;
+  const from=document.getElementById("email").value;
+  const topic=document.getElementById("topic").value;
+  const message=document.getElementById("message").value;
+  const subject=encodeURIComponent("Les Cocottes — "+topic);
+  const body=encodeURIComponent("Nom : "+name+"\nEmail : "+from+"\n\n"+message);
+  window.location.href=`mailto:${email}?subject=${subject}&body=${body}`;
+}
+</script>
+</body>
+</html>
